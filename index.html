@@ -7,20 +7,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button onclick="changeGridSize()">Change Grid Size</button>
     <div class="grid-container"></div>
 
     <script>
-        const gridSize = 16;
+        let gridSize = 16;
         const container = document.querySelector('.grid-container');
 
-        for (let i = 0; i < gridSize * gridSize; i++) {
-            const gridItem = document.createElement('div');
-            gridItem.className = 'grid-item';
-            container.appendChild(gridItem);
+        function createGrid() {
+            const container = document.querySelector('.grid-container');
+            container.innerHTML = '';
 
-            gridItem.addEventListener('mouseover', function() {
-                gridItem.style.backgroundColor = '#3498db';
-            });
+            container.style.setProperty('--grid-size', gridSize);
+            for (let i = 0; i < gridSize * gridSize; i++) {
+                const gridItem = document.createElement('div');
+                gridItem.className = 'grid-item';
+                container.appendChild(gridItem);
+
+                gridItem.addEventListener('mouseover', function() {
+                    gridItem.style.backgroundColor = 'black';
+                });
+            }
+        }
+
+        function changeGridSize() {
+            const newSize = prompt('Enter the number of squares per side for the new grid:');
+
+            if (newSize && !isNaN(newSize) && newSize > 0 && newSize < 101) {
+                gridSize = parseInt(newSize, 10);
+                createGrid();
+            } else {
+                alert('Please enter a valid number from 1 - 100.');
+            }
         }
     </script>
 </body>
