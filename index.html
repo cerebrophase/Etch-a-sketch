@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grid-container">
-
-    </div>
-
+    <div class="grid-container"></div>
 
     <script>
         const gridSize = 16;
@@ -20,6 +17,10 @@
             const gridItem = document.createElement('div');
             gridItem.className = 'grid-item';
             container.appendChild(gridItem);
+
+            gridItem.addEventListener('mouseover', function() {
+                gridItem.style.backgroundColor = '#3498db';
+            });
         }
     </script>
 </body>

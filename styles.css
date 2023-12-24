@@ -6,11 +6,18 @@ body {
 .grid-container {
     display: flex;
     flex-wrap: wrap;
+    width: 70%;
+    height: 600px;
 }
 
 .grid-item {
     box-sizing:border-box;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     width: 6.25%;
     padding-bottom: 6.25%;
+    /* transition: background-color 0.3s; */
+}
+
+/*.grid-item:hover {
+    background-color: #3498db;
 }
