@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+</head>
+<body>
+    <div class="grid-container">
+
+    </div>
+
+
+    <script>
+        const gridSize = 16;
+        const container = document.querySelector('.grid-container');
+
+        for (let i = 0; i < gridSize * gridSize; i++) {
+            const gridItem = document.createElement('div');
+            gridItem.className = 'grid-item';
+            container.appendChild(gridItem);
+        }
+    </script>
+</body>
+</html>
